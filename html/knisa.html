@@ -1,1 +1,175 @@
-placeholder
+<style>
+    input {
+        width: 300px;
+        padding: 4px;
+        font-size: 16px;
+    }
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 8px 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.success {
+  color: green;
+}
+
+.success:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<script>
+fixed_color0="#000000";
+fixed_color1="#FF0000";
+fixed_color2="#00FF00";
+fixed_color3="#0000FF";
+fixed_color4="#FF00FF";
+fixed_color5="#FFFFFF";
+fixed_color6="#FFFF00";
+fixed_color7="#00FFFF";
+fixed_color8="#FFAAFF";
+fixed_color9="#FFAAAA";
+fixed_color10="#FF0000";
+fixed_color11="#FF0000";
+fixed_color12="#FF0000";
+fixed_color13="#FF0000";
+fixed_color14="#FF0000";
+fixed_color15="#FF0000";
+</script>
+
+<div height="20" id="inscription" name="inscription" placeholder="random"></div>
+
+<br>
+<input type="text" id="textInput" placeholder="Type here to run language function" style='border:5px dotted yellow; color:#66FF66; background-color:#000000;'>
+
+
+<script>
+stringarray= [];
+
+    for (var i = 0; i < 1000; i++) {
+stringarray.push(generateRandomLanguage());
+    }
+
+
+//document.getElementById("textInput").addEventListener("input", changeBackgroundColor);
+document.getElementById("textInput").addEventListener("keydown", changeBackgroundColor);
+//document.getElementById("textInput").addEventListener("keyup", changeBackgroundColor);
+
+function changeBackgroundColor() {
+    //var randomColor1 = "#000000";
+    var randomColor0 = fixed_color0;
+    var randomColor1 = fixed_color1;
+    var randomColor2 = fixed_color2;
+    var randomColor3 = fixed_color3;
+    var randomColor4 = fixed_color4;
+    var randomColor5 = fixed_color5;
+    var randomColor6 = fixed_color6;
+    var randomColor7 = fixed_color7;
+    var randomColor8 = fixed_color8;
+    var randomColor9 = fixed_color9;
+    var randomColor10 = fixed_color10;
+//generateRandomColor();
+    //var randomColor2 = generateRandomColor();
+    //var randomColor3 = generateRandomColor();
+    //var randomColor4 = generateRandomColor();
+    //var randomColor5 = generateRandomColor();
+    //var randomColor6 = generateRandomColor();
+
+    var bc = [ randomColor0,
+    randomColor1,
+    randomColor2,
+    randomColor3,
+    randomColor4,
+    randomColor5 ];
+
+    document.getElementById("inscription").innerHTML = ""
+
+    for (var i = 0; i < 20; i++) {
+    document.getElementById("inscription").innerHTML += "<br>";
+    randex = Math.floor(Math.random() * 20)
+
+    document.getElementById("inscription").innerHTML += '<input type="button" class="button" value="Button">';
+    //document.getElementById("inscription").innerHTML += '<span style="color:' + bc[Math.floor(Math.random() * 5)]' + "background-color: inherit;'background-color:#FFFFFF " +>' + stringarray[randex] + '</span>';
+    document.getElementById("inscription").innerHTML += '<span style="color:' + bc[Math.floor(Math.random() * 4 + 1)] + '; background-color:' + bc[Math.floor(Math.random() * 2)] + ';">' + stringarray[randex] + '</span>';
+    //document.getElementById("inscription").innerHTML += stringarray[randex];
+    document.getElementById("inscription").innerHTML += '<a href="https://google.com">BBB</a>';
+
+    }
+
+}
+
+function generateRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function generateRandomString() {
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var gooby = '';
+
+    for (var i = 0; i < 16; i++) {
+        gooby += letters[Math.floor(Math.random() * 16)];
+    }
+    return gooby;
+}
+
+function generateRandomSyll() {
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var gooby = '';
+
+    for (var i = 0; i < (Math.floor(Math.random() * 10)+1); i++) {
+    //for (var i = 0; i < 10; i++) {
+        gooby += letters[Math.floor(Math.random() * 16)];
+        //gooby += "-";
+    }
+    gooby += "-";
+
+    return gooby;
+}
+
+function generateRandomLanguage() {
+    var parts = [ generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll(),
+    generateRandomSyll() ];
+
+    var gooby = '';
+
+    for (var i = 0; i < 10; i++) {
+        //gooby += parts[Math.floor(Math.random() * 6)] + "-";
+        gooby += parts[Math.floor(Math.random() * 3)];
+    }
+    return gooby;
+}
+
+</script>
